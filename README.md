@@ -1,4 +1,4 @@
-# **How to get Started Farming for Chia Coin in AWS **
+# How to get Started Farming for Chia Coin in AWS
 
 AWS offerings used: EC2 instance, S3 bucket, IAM
 
