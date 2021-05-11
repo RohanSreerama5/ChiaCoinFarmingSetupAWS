@@ -2,7 +2,7 @@
 
 AWS offerings used: `EC2 instance`, `S3 bucket`, `IAM`
 
-Steps: 
+# Steps: 
 
 1) Setup AWS account 
 2) Launch `EC2 instance`
@@ -172,7 +172,7 @@ with the `Chia` blockchain. It needs to become a serviceable node on the blockch
 33) That's it! You are done setting up! You can close your terminal, if you'd like. <br />
 
 
-How to Quickly Check in on your Farm: <br />
+# How to Quickly Check in on your Farm: <br />
 
 If you would like to see the status of your farming setup, you can go to `Downloads` via 
 the terminal. And paste in the `SSH` command you got in Step 3. Once logged into the server, type: <br />
@@ -187,6 +187,27 @@ To exit the AWS EC2 instance from your terminal, simply type: <br />
 `exit` 
 
 Now you're back home. Enjoy!
+
+# References: <br />
+<br />
+Setup: <br />
+https://newdaycrypto.com/how-to-mine-chia-cryptocurrency-on-amazon-aws-tutorial/ <br />
+https://zhuanlan.zhihu.com/p/370431286 <br />
+<br />
+S3 Bucket and IAM User & Policy: <br />
+https://m.blog.daum.net/techtip/12415315?tp_nil_a=2 <br />
+<br />
+Linux Knowledge: <br />
+https://phoenixnap.com/kb/linux-create-partition <br />
+https://linuxize.com/post/fdisk-command-in-linux/ <br />
+<br />
+Debugging: <br />
+https://askubuntu.com/questions/1096849/cant-make-new-dir-with-mkdir <br />
+https://99robots.com/how-to-fix-permission-error-ssh-amazon-ec2-instance/ <br />
+
+
+
+
 
 
 
