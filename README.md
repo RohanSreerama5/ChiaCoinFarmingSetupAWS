@@ -24,8 +24,8 @@ Note: If you get 'Unprotected Key File' Warning, then open terminal at Downloads
 
 8) Now hit `p`. This should show a list of partitions. 
 
-`/dev/nvme0n1p1       Size: 100 GB 
-/dev/nvme01n1p1      Size: 768 GB` 
+`/dev/nvme0n1p1       Size: 100 GB` 
+`/dev/nvme01n1p1      Size: 768 GB` 
 
 10) Now format the partition to the xfs filesystem. 
 `sudo mkfs -t xfs /dev/nvme0n1p1`
