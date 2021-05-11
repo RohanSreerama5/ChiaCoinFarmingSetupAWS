@@ -1,5 +1,7 @@
 # How to get Started Farming for Chia Coin in AWS
 
+This is a detailed how-to guide that will clearly outline every step invovled with creating your farming setup. <br />
+
 AWS offerings used: `EC2 instance`, `S3 bucket`, `IAM`
 
 # Steps: 
