@@ -12,7 +12,7 @@ Steps:
    - Request to generate a `.pem` key pair and store it in `Downloads` of local computer 
    - Click `Launch Instance`
 
-3) Navigate to your instance in AWS console and once it's ready, select your instance and hit `Connect`. Copy the `SSH` command under the `SSH` tab. Go to `Downloads` directory via terminal and paste that command in. 
+3) Navigate to your instance in AWS console and once it's ready, select your instance and hit `Connect`. Copy the `SSH` example command under the `SSH Client` tab. Go to `Downloads` directory via terminal and paste that command in. 
 
 Note: If you get `Unprotected Key File Warning`, then open terminal at `Downloads` directory and run: <br />
 `chmod 400 nameOfFile.pem` (This should be where your `.pem` key-pair file is located)
