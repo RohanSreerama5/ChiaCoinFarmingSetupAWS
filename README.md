@@ -207,9 +207,11 @@ Debugging: <br />
 https://askubuntu.com/questions/1096849/cant-make-new-dir-with-mkdir <br />
 https://99robots.com/how-to-fix-permission-error-ssh-amazon-ec2-instance/ <br />
 
-
 # Questions? Comments? 
 Email me at rsreerama42@gmail.com and I'll try my best to answer your questions/issues. Thank you! 
+
+# Learn about Chia Coin
+https://www.chia.net/
 
 
 
