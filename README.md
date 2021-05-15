@@ -266,7 +266,8 @@ To exit the AWS EC2 instance from your terminal, simply type: <br />
 exit
 ```
 
-Now you're back home. Enjoy!
+Now you're back home. Enjoy! Be sure to check `Billing` in the AWS Console to learn about your usage costs. 
+You've successfully just set up a Chia farming station. Awesome! 
 
 # References: <br />
 <br />
