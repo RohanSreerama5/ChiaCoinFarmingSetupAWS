@@ -8,7 +8,7 @@ AWS offerings used: `EC2 instance`, `S3 bucket`, `IAM`
 
 1) Setup AWS account 
 2) Launch `EC2 instance`
-   - Choose `i3.xlarge` w/ `Amazon Linux Image`
+   - Choose `Amazon Linux Image` and then select `i3.xlarge`
    - Specify `root volume` as `30 GB` (You can do this on Step 4:Add Storage)
    - Make sure when you get to `Step 6:Configure Security Group`, you select `My IP` under the `Source` tab for `SSH` protocol. 
    - Request to generate a `.pem` key pair and store it in `Downloads` of local computer 
