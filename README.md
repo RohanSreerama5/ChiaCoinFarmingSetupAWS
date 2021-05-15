@@ -72,7 +72,7 @@ wget https://github.com/kahing/goofys/releases/latest/download/goofys
 chmod u+x goofys
 ```
 ```
-mkdir /home/ec2-user/chia <br />
+mkdir /home/ec2-user/chia
 ```
 
 17) Now go back to AWS Console. And go to `IAM`. Click on `Policies` and create new policy. Paste in this `JSON`: 
