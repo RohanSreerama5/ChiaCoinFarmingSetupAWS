@@ -170,6 +170,8 @@ You are now on your way to farming! <br />
 `chia farm summary` 
 
 Note: The first time you run it, you may see some `Exception`. The second time, this will go away. 
+Run `chia wallet show` and type `S`. Then run `chia farm summary` and the `Exception` should be gone. 
+
 Basically, you are not farming yet. The system will say `Farming status: Syncing`, because it is syncing
 with the `Chia` blockchain. It needs to become a serviceable node on the blockchain before it can start plotting. 
 
