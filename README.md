@@ -171,7 +171,7 @@ sudo yum update -y
 sudo yum install python3 git -y 
 ```
 ```
-git clone https://github.com/Chia-Network/chia-blockchain.git -b latest --recurse-submodules <br />
+git clone https://github.com/Chia-Network/chia-blockchain.git -b latest --recurse-submodules
 ```
 27) Set up `Chia` <br />
 ```
