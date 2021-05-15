@@ -175,6 +175,20 @@ Run `chia wallet show` and type `S`. Then run `chia farm summary` and the `Excep
 Basically, you are not farming yet. The system will say `Farming status: Syncing`, because it is syncing
 with the `Chia` blockchain. It needs to become a serviceable node on the blockchain before it can start plotting. 
 
+Expected Output: 
+```
+Farming status: Syncing
+Total chia farmed: 0.0
+User transaction fees: 0.0
+Block rewards: 0.0
+Last height farmed: 0
+Plot count: 0
+Total size of plots: 0.000 GiB
+Estimated network space: 0.000 TiB
+Expected time to win: Now
+Note: log into your key using 'chia wallet show' to see rewards for each key
+```
+
 33) That's it! You are done setting up! You can close your terminal, if you'd like. <br />
 
 
