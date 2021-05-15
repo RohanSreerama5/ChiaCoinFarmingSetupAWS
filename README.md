@@ -223,6 +223,7 @@ Run `chia wallet show` and type `S`. Then run `chia farm summary` and the `Excep
 
 Basically, you are not farming yet. The system will say `Farming status: Syncing`, because it is syncing
 with the `Chia` blockchain. It needs to become a serviceable node on the blockchain before it can start plotting. 
+After a while, the status will change to `Farming`. 
 
 Expected Output: 
 ```
