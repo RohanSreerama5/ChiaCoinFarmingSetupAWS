@@ -21,17 +21,18 @@ Note: If you get `Unprotected Key File Warning`, then open terminal at `Download
 
 4) Now you are logged into EC2 instance. 
 5) Run `sudo fdisk /dev/nvme0n1`
-6) This will launch the fdisk utility program. Type `p` to see existing partition table. Now, type `n` to create a new partition. Choose `primary`. Then, click enter thru the next steps till it says `Last sector`. For `Last sector`, type `+100G` to give this partition `100 GB` space. 
-7) We will create one more partition which will store the rest of this server's storage in a partition. While staying in the `fdisk` utility program, type `n` and hit `enter` on keyboard (default options) for the all the options. Make you select `primary` for this partition as well.
+6) This will launch the fdisk utility program. Type `p` to see existing partition table. Now, type `n` to create a new partition. Choose `primary`. Then, click enter thru the next steps till it says `Last sector`. For `Last sector`, type `+880G` to give this partition `880 GB` space. 
+7) Continue to click enter through the rest of the steps till it's done. 
 
 8) Now hit `p`. This should show a list of partitions. 
 
 ```
-/dev/nvme0n1p1       Size: 100 GB
-/dev/nvme01n1p1      Size: 768 GB
+/dev/nvme0n1p1       Size: 880 GB
 ```
 
-10) Now format the partition to the `xfs` filesystem. <br />
+9) Now type `w` to save changes and `q` to exit the fdisk program. 
+
+10) Format the partition to the `xfs` filesystem. <br />
 `sudo mkfs -t xfs /dev/nvme0n1p1`
 
 11) Now create a mount point for the partition. <br />
@@ -46,7 +47,7 @@ Output should have: <br />
 
 ```
 Filesystem      Type      Size  Used Avail Use% Mounted on
-/dev/nvme0n1p1  xfs       100G   94G  6.6G  94% /tmp1
+/dev/nvme0n1p1 xfs       880G  930M  879G   1% /tmp1
 ```
 
 14) Now modify the permissions of the mount point to `ec2-user`: <br />
@@ -98,7 +99,7 @@ Note: Change `nameOfS3Bucket` to the name of your S3 Bucket. <br />
 21) Go back to your terminal that's still logged into your EC2 instance. 
 
 22) Switch to root and create AWS credentials file. <br />
-`sudo su -root` <br />
+`sudo su - root` <br />
 `mkdir ~/.aws` <br />
 `vi ~/.aws/credentials`    (Using Vim terminal text editor) <br />
 
@@ -131,14 +132,14 @@ Make sure to replace `nameOfS3Bucket` with the name of your S3 Bucket.
 
 ```
 Filesystem      Type      Size  Used Avail Use% Mounted on
-/dev/nvme0n1p1   100G   91G  9.2G  91% /tmp1
-nameOfS3Bucket  1.0P     0  1.0P   0% /home/ec2-user/chia
+/dev/nvme0n1p1   880G   52G  829G   6% /tmp1
+nameOfS3Bucket   1.0P    0   1.0P   0% /home/ec2-user/chia
 ```
 
 26) Install `Chia` code <br />
 `sudo yum update -y` <br />
 `sudo yum install python3 git -y` <br />
-`git clone https://github.com/Chia-Network/chia-blockchain.git -b latest —recurse-submodules` <br />
+`git clone https://github.com/Chia-Network/chia-blockchain.git -b latest --recurse-submodules` <br />
 
 27) Set up `Chia` <br />
 `cd chia-blockchain` <br />
