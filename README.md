@@ -34,13 +34,19 @@ Device         Boot Start        End    Sectors  Size Id Type
 9) Now type `w` to save changes and `q` to exit the fdisk program. 
 
 10) Format the partition to the `xfs` filesystem. <br />
-`sudo mkfs -t xfs /dev/nvme0n1p1`
+```
+sudo mkfs -t xfs /dev/nvme0n1p1
+```
 
 11) Now create a mount point for the partition. <br />
-`sudo mkdir -p /tmp1` 
+```
+sudo mkdir -p /tmp1
+```
 
 12) Now mount the partition. <br />
-`sudo mount /dev/nvme0n1p1 /tmp1`
+```
+sudo mount /dev/nvme0n1p1 /tmp1
+```
 
 13) Type `df -hT` and check that you see the `/dev/nvme0n1p1` partition mounted on `/tmp1`
 
@@ -52,14 +58,22 @@ Filesystem      Type      Size  Used Avail Use% Mounted on
 ```
 
 14) Now modify the permissions of the mount point to `ec2-user`: <br />
-`sudo chown -R ec2-user.ec2-user /tmp1` 
+```
+sudo chown -R ec2-user.ec2-user /tmp1
+```
 
 15) Now go to your AWS Console and create an S3 Bucket. (Note down the name you give to the bucket)
 
 16) Install `goofys` on EC2 host. <br />
-`wget https://github.com/kahing/goofys/releases/latest/download/goofys` <br />
-`chmod u+x goofys` <br />
-`mkdir /home/ec2-user/chia` <br />
+```
+wget https://github.com/kahing/goofys/releases/latest/download/goofys 
+```
+```
+chmod u+x goofys
+```
+```
+mkdir /home/ec2-user/chia <br />
+```
 
 17) Now go back to AWS Console. And go to `IAM`. Click on `Policies` and create new policy. Paste in this `JSON`: 
 
@@ -100,9 +114,15 @@ Note: Change `nameOfS3Bucket` to the name of your S3 Bucket. <br />
 21) Go back to your terminal that's still logged into your EC2 instance. 
 
 22) Switch to root and create AWS credentials file. <br />
-`sudo su - root` <br />
-`mkdir ~/.aws` <br />
-`vi ~/.aws/credentials`    (Using Vim terminal text editor) <br />
+```
+sudo su - root
+```
+```
+mkdir ~/.aws
+```
+```
+vi ~/.aws/credentials
+```
 
 Click `I` key on your keyboard to start writing in this text file. Paste ALL this in: 
 
@@ -119,13 +139,19 @@ Hit `Escape` key on keyboard once.
 Type `:wq` and hit `Enter` on keyboard. 
 
 At this point switch from root user to regular by typing: <br />
-`sudo su - ec2-user` 
+```
+sudo su - ec2-user
+```
 
 23) Now we create a mount point. <br />
-`sudo mkdir -p /home/ec2-user/chia`
+```
+sudo mkdir -p /home/ec2-user/chia
+```
 
 24) Run: <br />
-`sudo ./goofys --uid 1000 --gid 1000 -o allow_other nameOfS3Bucket /home/ec2-user/chia`
+```
+sudo ./goofys --uid 1000 --gid 1000 -o allow_other nameOfS3Bucket /home/ec2-user/chia
+```
 
 Make sure to replace `nameOfS3Bucket` with the name of your S3 Bucket. 
 
@@ -138,36 +164,59 @@ nameOfS3Bucket   1.0P    0   1.0P   0% /home/ec2-user/chia
 ```
 
 26) Install `Chia` code <br />
-`sudo yum update -y` <br />
-`sudo yum install python3 git -y` <br />
-`git clone https://github.com/Chia-Network/chia-blockchain.git -b latest --recurse-submodules` <br />
-
+```
+sudo yum update -y
+```
+```
+sudo yum install python3 git -y 
+```
+```
+git clone https://github.com/Chia-Network/chia-blockchain.git -b latest --recurse-submodules <br />
+```
 27) Set up `Chia` <br />
-`cd chia-blockchain` <br />
-`chmod +x ./install.sh` <br />
-`sh install.sh` <br />
-`. ./activate` <br />
+```
+cd chia-blockchain
+```
+```
+chmod +x ./install.sh
+```
+```
+sh install.sh
+```
+```
+. ./activate`
+```
 
 28)  Install and execute the initialization command for the first time: <br />
-`chia init` 
+```
+chia init
+```
 
 29) If this is your first time, run this to generate a new wallet address: <br />
-`chia keys generate` 
+```
+chia keys generate
+```
 
 Note: If you already have a wallet, you can type `chia keys add` and paste in your generated mnemonic. <br />
 
 Make sure you note the output of this command safely. <br />
 
 30) Start the `Chia` process. <br />
-`chia start farmer` 
+```
+chia start farmer
+```
 
 31) Start farming <br />
-`nohup chia plots create -k 32 -b 6000 -r 2 -n 2 -t /tmp1 -2 /tmp1 -d /home/ec2-user/chia>>plots1.log 2>&1 &`
+```
+nohup chia plots create -k 32 -b 6000 -r 2 -n 2 -t /tmp1 -2 /tmp1 -d /home/ec2-user/chia>>plots1.log 2>&1 &
+```
 
 You are now on your way to farming! <br />
 
 32) Run this to see stats about your farm: <br />
-`chia farm summary` 
+```
+chia farm summary
+```
 
 Note: The first time you run it, you may see some `Exception`. The second time, this will go away. 
 Run `chia wallet show` and type `S`. Then run `chia farm summary` and the `Exception` should be gone. 
@@ -196,15 +245,25 @@ Note: log into your key using 'chia wallet show' to see rewards for each key
 
 If you would like to see the status of your farming setup, you can go to `Downloads` via 
 the terminal. And paste in the `SSH` command you got in Step 3. Once logged into the server, type: <br />
-`cd chia-blockchain` <br />
-`. ./activate` <br />
-`chia farm summary` <br />
+```
+cd chia-blockchain
+```
+```
+. ./activate
+```
+```
+chia farm summary
+```
 
 To see the status of your `Chia` wallet, run: <br />
-`chia wallet show` 
+```
+chia wallet show
+```
 
 To exit the AWS EC2 instance from your terminal, simply type: <br />
-`exit` 
+```
+exit
+```
 
 Now you're back home. Enjoy!
 
