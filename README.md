@@ -27,7 +27,8 @@ Note: If you get `Unprotected Key File Warning`, then open terminal at `Download
 8) Now hit `p`. This should show a list of partitions. 
 
 ```
-/dev/nvme0n1p1       Size: 880 GB
+Device         Boot Start        End    Sectors  Size Id Type
+/dev/nvme0n1p1       2048 1845495807 1845493760  880G 83 Linux
 ```
 
 9) Now type `w` to save changes and `q` to exit the fdisk program. 
