@@ -272,7 +272,6 @@ Now you're back home. Enjoy!
 <br />
 Setup: <br />
 https://newdaycrypto.com/how-to-mine-chia-cryptocurrency-on-amazon-aws-tutorial/ <br />
-https://zhuanlan.zhihu.com/p/370431286 <br />
 <br />
 S3 Bucket and IAM User & Policy: <br />
 https://m.blog.daum.net/techtip/12415315?tp_nil_a=2 <br />
